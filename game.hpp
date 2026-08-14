@@ -32,7 +32,6 @@ struct Game {
         if(player_val >= 6) {
             if(banker_val < 6) banker_hand.add(shoe.next());
         } else {
-            player_val = player_hand.value();
             switch(banker_val) {
                 case 0: [[fallthrough]];
                 case 1: [[fallthrough]];
@@ -41,19 +40,19 @@ struct Game {
                     break;
                 }
                 case 3: {
-                    if(player_val != 8) banker_hand.add(shoe.next());
+                    if(player_draw != 8) banker_hand.add(shoe.next());
                     break;
                 }
                 case 4: {
-                    if(player_val >= 2 && player_val <= 7) banker_hand.add(shoe.next());
+                    if(player_draw >= 2 && player_draw <= 7) banker_hand.add(shoe.next());
                     break;
                 }
                 case 5: {
-                    if(player_val >= 4 && player_val <= 7) banker_hand.add(shoe.next());
+                    if(player_draw >= 4 && player_draw <= 7) banker_hand.add(shoe.next());
                     break;
                 }
                 case 6: {
-                    if(player_val == 6 || player_val == 7) banker_hand.add(shoe.next());
+                    if(player_draw == 6 || player_draw == 7) banker_hand.add(shoe.next());
                     break;
                 }
                 default: break;

@@ -7,4 +7,7 @@ add_executable(Baccarat main.cpp
     deck.hpp
     shoe.hpp
     globals.hpp
-    globals.cpp)
+    globals.cpp
+    hand.hpp
+    result.hpp
+    shoe.hpp)

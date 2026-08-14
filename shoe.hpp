@@ -42,6 +42,12 @@ struct Shoe {
         return value;
     }
 
+    void shuffle() {
+        std::shuffle(cards.begin(), cards.end(), globals::rng);
+        pos = 0;
+        cut_card = cut_card_pos();
+    }
+
 private:
     std::array<int, deck.size() * number_of_decks> cards;
     std::size_t pos, cut_card;
@@ -53,12 +59,6 @@ private:
         };
 
         return dist(globals::rng);
-    }
-
-    void shuffle() {
-        std::shuffle(cards.begin(), cards.end(), globals::rng);
-        pos = 0;
-        cut_card = cut_card_pos();
     }
 };
 
