@@ -62,4 +62,19 @@ private:
     }
 };
 
+struct ShoeRef {
+    template<Deck deck, std::size_t number_of_decks>
+    explicit ShoeRef(Shoe<deck, number_of_decks>& shoe) :
+        ptr{static_cast<void*>(&shoe)},
+        next_function([](void* p) -> int {
+            return static_cast<Shoe<deck, number_of_decks>*>(p)->next();
+        }) {}
+
+    [[nodiscard]] int next() const { return next_function(ptr); }
+
+private:
+    void* ptr;
+    int (*next_function)(void*);
+};
+
 #endif
