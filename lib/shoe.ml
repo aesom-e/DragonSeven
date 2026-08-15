@@ -1,8 +1,8 @@
 open Base
 
-type shoe = int array
+type t = int array
 
-let fresh n_decks = Array.init 10 ~f:(fun i -> if i = 0 then 16 * n_decks else 4 * n_decks)
+let init n_decks = Array.init 10 ~f:(fun i -> if i = 0 then 16 * n_decks else 4 * n_decks)
 
 let total shoe = Array.fold shoe ~init:0 ~f:(+)
 

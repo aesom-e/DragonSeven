@@ -1,7 +1,7 @@
 type t 
 
-(** [fresh n_decks] build a full unshuffled shoe of [n_decks] decks. *)
-val fresh : int -> t
+(** [init n_decks] build a full unshuffled shoe of [n_decks] decks. *)
+val init : int -> t
 
 (** [total shoe] is the total number of cards remaining. *)
 val total : t -> int
