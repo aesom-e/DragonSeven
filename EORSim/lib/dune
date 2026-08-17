@@ -1,0 +1,3 @@
+(library
+  (name dragon7)
+  (libraries base stdio))
